@@ -1,0 +1,75 @@
+Nombre: David Valtierra (david.valtierra)
+Asignatura: Algoritmos.
+Examen.
+
+El programa exame.c realiza una ordenación de un vector de n números enteros.
+Se realizan pruebas con tres tipos de vectores, uno con valores aleatorios, otro con valores ordenados
+descendentemente y por último, un vector ordenado ascendentemente.
+Se utiliza el algoritmo de ordenación por shell, para cada uno de estos problemas.
+Además, tambien mide los tiempos de ejecución del algoritmo con cada tipo de vector,
+estos tiempos están medidos en microsegundos(µs).
+
+Ordenacion shell con inicializacion aleatorio.
+           n           t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)
+         200*        20.0700       0.289550     0.03477854     0.00050175
+         400*        50.4000       0.417621     0.03801531     0.00031500
+         800*       116.7100       0.555439     0.03831776     0.00018236
+        1600*       272.6000       0.745126     0.03895667     0.00010648
+        3200        614.0000       0.963936     0.03819341     0.00005996
+        6400       1415.0000       1.275888     0.03831250     0.00003455
+       12800       3175.0000       1.644280     0.03741896     0.00001938
+       25600       7408.0000       2.203479     0.03800257     0.00001130
+				subestimada	ajustada	sobrestimada
+						cte=0.038
+
+*:Tiempo promedio de 100 ejecuciones del algoritmo.
+Cota subestimada(f(n)): n^0.8
+Cota ajustada(g(n)): n^1.25
+Cota sobrestimada(h(n)): n^2
+
+
+Ordenacion shell con inicializacion descendente.
+           n           t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)
+         200*        12.3800       0.061900     0.02651709     0.00030950
+         400*        25.0700       0.062675     0.02403061     0.00015669
+         800*        54.1900       0.067737     0.02324528     0.00008467
+        1600*       119.9600       0.074975     0.02302806     0.00004686
+        3200*       276.3000       0.086344     0.02373597     0.00002698
+        6400        585.0000       0.091406     0.02248988     0.00001428
+       12800       1344.0000       0.105000     0.02312255     0.00000820
+       25600       3009.0000       0.117539     0.02316668     0.00000459
+				subestimada	ajustada	sobrestimada
+						cte=0.023
+
+*:Tiempo promedio de 100 ejecuciones del algoritmo.
+Cota subestimada(f(n)): n^1
+Cota ajustada(g(n)): n^1.16
+Cota sobrestimada(h(n)): n^2
+
+Ordenacion shell con inicializacion ascendente.
+           n           t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)
+         200*         6.9600       0.034800     0.01490783     0.00017400
+         400*        15.1600       0.037900     0.01453147     0.00009475
+         800*        33.9900       0.042488     0.01458031     0.00005311
+        1600*        72.9100       0.045569     0.01399613     0.00002848
+        3200*       160.1900       0.050059     0.01376136     0.00001564
+        6400*       361.4900       0.056483     0.01389721     0.00000883
+       12800        777.0000       0.060703     0.01336772     0.00000474
+       25600       1640.0000       0.064062     0.01262657     0.00000250
+				subestimada	ajustada	sobrestimada
+						cte=0.013
+
+*:Tiempo promedio de 100 ejecuciones del algoritmo.
+Cota subestimada(f(n)): n^1
+Cota ajustada(g(n)): n^1.16
+Cota sobrestimada(h(n)): n^2
+
+Para evitar datos anómalos, se ejecuta el código dos veces seguidas.
+
+Conclusión:
+La ordenacion con el vector aleatorio es el que mas tarda, tine la complejidada de los casos medios
+con incrementos de Hibbard.
+La ordenación con el vector ascendente y descendente, siendo el ascendente el más rápido, tienen 
+la misma complejidad la de los peores casos con incrementos de Hibbard
+
+

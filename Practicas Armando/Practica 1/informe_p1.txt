@@ -1,0 +1,87 @@
+﻿El ordenador que se usó para la medición de tiempos es un portátil con:
+CPU: Intel(R) Core(TM) i7-8750H @ 2.20GHz 2.21GHz
+Memoria Ram: 16GB DDR4
+Disco duro HDD (1TB): 100GB (es una partición)
+Sistema Operativo: Ubuntu 14.05.5 (64-bit)
+
+Nombre: Jose Joaquin Baz Pena (jose.baz1), Xan Limia García (xan.limia) Armando Martínez Noya (a.mnoya).
+Grupo de prácticas: 4.3.
+
+El programa fib calcula sucesión de Fibonacci de tres maneras diferentes, mediante tres algoritmos distintos.
+El algoritmo 1 tiene una complejidad computacional de orden exponencial, el segundo de orden lineal y el tercero de orden logaritmico.
+
+Para el primer algoritmo se elige una secuencia de 5 números con una progresión de razón dos, mientras que los 
+otros dos es de razón diez.
+
+Además tambien mide los tiempos de ejecución de los distintas algoritmos, estos tiempos están medidos en microsegundos(µs).
+
+A continuación se muestran las tablas y los tiempos ingresados para el 
+primer algoritmo de fibonacci.
+
+Para las ejecuciones cuyo tiempo no supere el umbral de confianza de 500 microsegundos, 
+se repetirá el algoritmo k veces y se hallará la media del tiempo de ejecución.
+Los tiempos para los que se ha calculado automáticamente esta media estarán marcados con (*).
+
+
+Fibonacci 1
+          n           t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)
+(*)       2         0.0074       0.006132       0.002834     0.00185500
+(*)       4         0.0170       0.011625       0.002483     0.00106375
+(*)       8         0.1308       0.061033       0.002785     0.00051105
+(*)      16         5.8510       1.273348       0.002651     0.00008928
+         32     13923.0000     659.427262       0.002858     0.00000324
+
+k=100000.
+Cota Subestimada: 1.1^n
+Cota Ajustada: (1+sqrt(5))/2)^n
+CotaSobrestimada: 2^n
+
+Empleando una cota ligeramente subestimada, la secuencia
+de t(n)/1.1^n tienda a infinito cuando n tiende a infinito.
+Y con una cota ligeramente sobreestimada, la relación de t(n)/2^n 
+tienda a cero cuando n tiende a infinito.
+La cota ajustada tiende al valor 0.0025 
+
+Fibonacci 2
+          n           t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)
+(*)    1000          3.356       0.013360       0.003356       0.000486
+(*)   10000         32.359       0.020417       0.003236       0.000351
+(*)  100000        302.104       0.030210       0.003021       0.000262
+    1000000       2909.000       0.046105       0.002909       0.000211
+   10000000      30925.000       0.077680       0.003093       0.000192
+
+k=1000.
+Cota Subestimada: n^0.8
+Cota Ajustada: n
+CotaSobrestimada: n*log(n)
+
+Empleando una cota ligeramente subestimada, la secuencia
+de t(n)/n^0.8 tienda a infinito cuando n tiende a infinito.
+Y con una cota ligeramente sobreestimada, la relación de t(n)/n*log(n) 
+tienda a cero cuando n tiende a infinito.
+La cota ajustada tiende al valor 0.0031 
+
+Fibonacci 3
+          n           t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)
+(*)    1000          0.054       0.020698       0.007875       0.001720
+(*)   10000          0.064       0.021088       0.006949       0.000640
+(*)  100000          0.077       0.022605       0.006662       0.000243
+(*) 1000000          0.097       0.026043       0.007007       0.000097
+(*)10000000          0.108       0.026901       0.006701       0.000034
+
+k=10000.
+Cota Subestimada: sqrt(log(n))
+Cota Ajustada: log(n)
+CotaSobrestimada: n^0.5
+
+Empleando una cota ligeramente subestimada, la secuencia
+de t(n)/sqrt(log(n)) tienda a infinito cuando n tiende a infinito.
+Y con una cota ligeramente sobreestimada, la relación de t(n)/n^0.5
+tienda a cero cuando n tiende a infinito.
+La cota ajustada tiende al valor 0.0066. 
+
+Nótese que hemos elegido las mejores tablas de una secuencia de varias para evitar las anomalías.
+
+La conclusión es que el tercer algoritmo es mucho más eficiente tal y como se puede comparar en las tablas.
+A diferencia de los otros dos, en el primero se calculan numeros más pequeños ya que debido a la complejidad
+del primer algoritmo tardaria demasiado al calcular números más grandes.

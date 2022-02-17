@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/34698/Desktop/Universidad/Algortimos/ALGORITMOS/Practicas Armando/Practica 1/Fib/main.c
+stdio.h
+-
+math.h
+-
+sys/time.h
+-
+

@@ -1,0 +1,3 @@
+/cygdrive/c/Users/34698/Desktop/Universidad/Algortimos/ALGORITMOS/Practicas Armando/Practica 1/Fib/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/c/Users/34698/Desktop/Universidad/Algortimos/ALGORITMOS/Practicas Armando/Practica 1/Fib/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cygdrive/c/Users/34698/Desktop/Universidad/Algortimos/ALGORITMOS/Practicas Armando/Practica 1/Fib/cmake-build-debug/CMakeFiles/Fib.dir

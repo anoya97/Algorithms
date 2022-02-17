@@ -1,0 +1,120 @@
+﻿Nombre de la pareja de prácticas: David Valtierra(david.valtierra) y Julián Fernández (julian.fernandez1).
+Grupo de prácticas: 3.3.
+
+El programa ordenacion.c realiza una ordenación ascendente de un vector de n números enteros.
+Se utilizan dos algoritmos distintos, ordenación por inserción y ordenación rápida, para cada uno de estos
+se realizan pruebas con tres tipos de vectores, uno con valores aleatorios, otro con valores ordenados
+descendentemente y por último, un vector ordenado ascendentemente.
+Además tambien mide los tiempos de ejecución de los distintos algoritmos con cada tipo de vector,
+estos tiempos están medidos en microsegundos(µs).
+
+El ordenador que se usó para la medición de tiempos es un portátil con:
+CPU: Intel Core i7-5500U, up to 3.0 GHz
+Memoria Ram: 8GB
+Disco duro: 100GB (es una partición)
+Sistema Operativo: Ubuntu 14.05.5 (64-bit)
+
+ORDENACIÓN POR INSERCIÓN:
+-Aleatoria
+           n           t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)
+         500*       216.0000       0.002994     0.00086400     0.00024930
+        1000        759.0000       0.003022     0.00075900     0.00019065
+        2000       3016.0000       0.003448     0.00075400     0.00016488
+        4000      12651.0000       0.004154     0.00079069     0.00015052
+        8000      49471.0000       0.004664     0.00077298     0.00012810
+       16000     193298.0000       0.005234     0.00075507     0.00010893
+       32000     770499.0000       0.005991     0.00075244     0.00009450
+				subestimada	ajustada	sobrestimada
+						cte=0.00075
+*:Tiempo promedio de 10 ejecuciones del algoritmo.
+Cota subestimada(f(n)): n^1.8
+Cota ajustada(g(n)): n^2
+Cota sobrestimada(h(n)): n^2.2
+
+-Descendente
+           n           t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)
+         500*       383.8000       0.005321     0.00153520     0.00044297
+        1000       1549.0000       0.006167     0.00154900     0.00038909
+        2000       6358.0000       0.007269     0.00158950     0.00034758
+        4000      24904.0000       0.008176     0.00155650     0.00029630
+        8000      96858.0000       0.009132     0.00151341     0.00025081
+       16000     387040.0000       0.010479     0.00151187     0.00021812
+       32000    1571937.0000       0.012223     0.00153509     0.00019280
+				subestimada	ajustada	sobrestimada
+						cte=0.0015
+*:Tiempo promedio de 10 ejecuciones del algoritmo.
+Cota subestimada(f(n)): n^1.8
+Cota ajustada(g(n)): n^2
+Cota sobrestimada(h(n)): n^2.2
+
+-Ascendente
+           n           t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)
+         500*         2.0390       0.014133     0.00407800     0.00117667
+        1000*         3.9350       0.015666     0.00393500     0.00098843
+        2000*         8.3060       0.018992     0.00415300     0.00090815
+        4000*        16.1400       0.021196     0.00403500     0.00076812
+        8000*        33.2020       0.025043     0.00415025     0.00068779
+       16000*        66.0800       0.028627     0.00413000     0.00059584
+       32000*       131.0260       0.032601     0.00409456     0.00051425
+				subestimada	ajustada	sobrestimada
+						cte=0.004
+*:Tiempo promedio de 1000 ejecuciones del algoritmo.
+Cota subestimada(f(n)): n^0.8
+Cota ajustada(g(n)): n
+Cota sobrestimada(h(n)): n^1.2
+En este caso, se recorre una unica vez el vector, por lo que tenemos una complejidad lineal.
+
+ORDENACIÓN RÁPIDA:
+-Aleatoria
+           n           t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)
+        8000        923.0000       0.077465     0.01283771     0.00212750
+       16000       1963.0000       0.087848     0.01267388     0.00182846
+       32000       4227.0000       0.101388     0.01273378     0.00159929
+       64000       9225.0000       0.119126     0.01302479     0.00142408
+      128000      19331.0000       0.134923     0.01284236     0.00122237
+      256000      39995.0000       0.151406     0.01254568     0.00103955
+      512000      84793.0000       0.174642     0.01259777     0.00090874
+     1024000     179520.0000       0.201726     0.01266780     0.00079550
+				subestimada	ajustada	sobrestimada
+						cte=0.0125
+Cota subestimada(f(n)): (n^0.8)*log(n)
+Cota ajustada(g(n)): n*log(n)
+Cota sobrestimada(h(n)): (n^1.2)*log(n) 
+
+-Descendente
+           n           t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)
+        8000*       334.5000       0.028074     0.00465245     0.00077102
+       16000        723.0000       0.032356     0.00466796     0.00067345
+       32000       1507.0000       0.036147     0.00453982     0.00057018
+       64000       3185.0000       0.041129     0.00449691     0.00049167
+      128000       7029.0000       0.049060     0.00466965     0.00044447
+      256000      14548.0000       0.055073     0.00456343     0.00037813
+      512000      29931.0000       0.061647     0.00444688     0.00032078
+     1024000      62192.0000       0.069885     0.00438857     0.00027559
+				subestimada	ajustada	sobrestimada
+						cte=0.0045
+*:Tiempo promedio de 10 ejecuciones del algoritmo.
+Cota subestimada(f(n)): (n^0.8)*log(n)
+Cota ajustada(g(n)): n*log(n)
+Cota sobrestimada(h(n)): (n^1.2)*log(n) 
+
+-Ascendente
+           n           t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)
+        8000*       289.6000       0.024305     0.00402795     0.00066752
+       16000        629.0000       0.028149     0.00406106     0.00058589
+       32000       1326.0000       0.031805     0.00399456     0.00050169
+       64000       2852.0000       0.036829     0.00402674     0.00044027
+      128000       6337.0000       0.044230     0.00420992     0.00040071
+      256000      12831.0000       0.048573     0.00402484     0.00033350
+      512000      26867.0000       0.055336     0.00399165     0.00028794
+     1024000      57266.0000       0.064349     0.00404096     0.00025376
+				subestimada	ajustada	sobrestimada
+						cte=0.004
+*:Tiempo promedio de 10 ejecuciones del algoritmo.
+Cota subestimada(f(n)): (n^0.8)*log(n)
+Cota ajustada(g(n)): n*log(n)
+Cota sobrestimada(h(n)): (n^1.2)*log(n) 
+
+Conclusion: 
+Como conclusión podemos comprobar que el segundo algoritmo (ordenacion rapida) es el más eficiente.
+Respecto al apartado teórico, las cotas se comportan adecuadamente.

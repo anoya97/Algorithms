@@ -1,0 +1,45 @@
+En este informe vamos a estudiar los tiempos de ejecución de tres algoritmos distintos para realizar la sucesión de Fibonacci.
+Estas pruebas se han realizado con una Raspberry Pi Model B Rev 2:
+   -CPU: ARMv6(BCM2708) 700MHz 32bits
+   -RAM: 434MiB
+   -OS: Raspbian GNU/Linux 7
+Todos los tiempos mostrados son en microsegundos.
+
+Fibonacci 1
+     n           t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)
+     2         0.1309*      0.108182       0.049999       0.032725
+     4         0.3936*      0.268834       0.057425       0.024600
+     8         6.9181*      3.227345       0.147260       0.027024
+    16       301.4610*     65.606697       0.136593       0.004600
+    32    663129.0000   31407.407969       0.136142       0.000154
+                         subestimada       ajustada     sobrestimada
+                                          Cte = 0.13
+                                          
+   *: Tiempo promedio de 1000 ejecuciones del algoritmo.
+   Conclusión: t(n) = O(Phi^n)
+   
+Fibonacci 2
+           n           t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)
+        1000         32.300*      0.128589       0.032300       0.004676
+       10000        650.670*      0.410545       0.065067       0.007065
+      100000       3228.000       0.322800       0.032280       0.002804
+     1000000      73038.000       1.157574       0.073038       0.005287
+    10000000     695570.000       1.747193       0.069557       0.004315
+                               subestimada       ajustada     sobrestimada
+                                                Cte = 0.06
+                                                
+   *: Tiempo promedio de 100 ejecuciones del algoritmo.
+   Conclusión: t(n) = O(n)
+   
+Fibonacci 3
+           n           t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)
+        1000          2.480*      0.943590       0.359017       0.078424
+       10000          3.219*      1.060677       0.349498       0.032190
+      100000          4.147*      1.222197       0.360204       0.013114
+     1000000          4.850*      1.304843       0.351055       0.004850
+    10000000          5.710*      1.422261       0.354260       0.001806
+                               subestimada       ajustada     sobrestimada
+                                                Cte = 0.35
+                                                
+   *: Tiempo promedio de 1000 ejecuciones del algoritmo.
+   Conclusión: t(n) = O(log(n))

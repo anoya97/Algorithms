@@ -1,0 +1,45 @@
+Nombre de la pareja de prácticas: David Valtierra (david.valtierra) y Julián Fernández (julian.fernandez1).
+Grupo de prácticas: 3.3.
+Asignatura: Algoritmos.
+Práctica 4.
+
+El ordenador que se usó para la medición de tiempos es un portatil con:
+CPU: Intel Core i7-5500U, up to 3.0 GHz
+Memoria Ram: 8GB
+Disco duro: 100Gb (es una partición)
+Sistema Operativo: Ubuntu 14.05.5 (64-bit)
+
+En el programa prim.c estudiamos la complejidad computacional a la hora de calcular el árbol de recubrimiento
+mínimo, usando el algoritmo de prim 2 dado en teoría. Para ello, este algoritmo devuelve las aristas que 
+forman este árbol dentro de una cola circular implementada en base a vectores.
+A la hora de estudiar esta complejidad, generamos aleatoriamente 7 grafos completos no dirigidos con 10,
+20, 40, 80, 160, 320 y 640 nodos respectivamente. Para esto generamos matrices de adyacencia llenandolas 
+con valores aleatorios que representan los pesos de las aristas.
+Si los tiempos obtenidos al estudiar el algoritmo son menores que 500, repetimos el estudio para ese árbol
+hasta conseguir tiempos mayores a ese umbral, despues dividimos este tiempo entre el número de repeticiones.
+Todos estos tiempos están medidios en microsegundos(µs).
+
+    n             t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)     t(n)/g(n)**
+   10*          0.651         0.0206        0.00651      0.0010318        0.00541
+   20*          2.642         0.0295        0.00660      0.0006012        0.00520
+   40*          9.807         0.0388        0.00613      0.0003205        0.00456
+   80*         42.018         0.0587        0.00657      0.0001971        0.00462
+  160*        190.089         0.0939        0.00743      0.0001281        0.00495
+  320         746.000         0.1303        0.00729      0.0000722        0.00459
+  640        3177.000         0.1962        0.00776      0.0000441        0.00463
+			   Subestimada	Ajustada teorica Sobrestimada	 Ajustada
+									Cte = 0.0046
+
+*:Tiempo promedio de 1000 ejecuciones del algoritmo.
+Los dos primeros datos  de la cota ajustada son ligeramente superiores a la constante.
+
+Cota subestimada(f(n)): (n^1.5)
+Cota ajustada teórica(g(n)): (n^2)
+Cota sobrestimada(h(n)): (n^2.8) 
+Cota ajustada(g(n)**): (n^2.08)
+
+Para evitar datos anómalos, se ejecuta el código dos veces seguidas.
+
+Conclusión:
+La cota ajustada teórica (n^2) no es lo suficientemente constante a lo largo de n, es ligeramente
+subestimada. Por este motivo obtuvimos empiricamente una cota ajustada (n^2.08).

@@ -1,0 +1,52 @@
+﻿Nombre de la pareja de prácticas: David Valtierra(david.valtierra) y Julián Fernández (julian.fernandez1).
+Grupo de prácticas: 3.3.
+Asignatura: Algoritmos.
+Practica 3.
+
+El programa arboles.c implementa algunas funciones sobre arboles binarios , como crear arbol, eliminar arbol, 
+buscar algun elemento, calcular la altura del arbol, visualizar el arbol, etc. 
+Ademas estudia la complejidad de las funciones buscar e insertar (con los tiempos medidos en microsegundos(µs)).
+
+El ordenador que se usó para la medición de tiempos es un portátil con:
+CPU: Intel Core i7-5500U, up to 3.0 GHz
+Memoria Ram: 8GB
+Disco duro: 100GB (es una partición)
+Sistema Operativo: Ubuntu 14.05.5 (64-bit)
+
+Insercion de n elementos:
+           n            t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)      t(n)/g(n)*
+        8000        1586.00         0.3270        0.00366      0.0002466        0.02206
+       16000        3585.00         0.4224        0.00334      0.0001830        0.02315
+       32000        9195.00         0.6223        0.00348      0.0001548        0.02770
+       64000       22708.00         0.8868        0.00351      0.0001267        0.03206
+      128000       53600.00         1.2126        0.00339      0.0000995        0.03561
+      256000      131786.00         1.7331        0.00343      0.0000817        0.04134
+                                   subestimada    ajustada    sobreestimada   ajustada teorica
+						 cte=0.0034
+Cota subestimada(f(n)): (n^0.7)*log(n)
+Cota ajustada(g(n)): (n^1.2)*log(n)
+Cota sobrestimada(h(n)): (n^1.5)*log(n) 
+Cota ajustada teorica(g(n)*): n*log(n)
+
+Busqueda de n elementos:
+           n            t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)      t(n)/g(n)*
+        8000        1649.00         0.3400        0.00380      0.0002564        0.02294
+       16000        4372.00         0.5151        0.00407      0.0002232        0.02823
+       32000       11138.00         0.7538        0.00421      0.0001876        0.03355
+       64000       25843.00         1.0093        0.00399      0.0001442        0.03649
+      128000       60831.00         1.3762        0.00385      0.0001130        0.04041
+      256000      158148.00         2.0798        0.00411      0.0000980        0.04961
+                                   subestimada    ajustada   sobreestimada   ajustada teorica
+						 cte=0.0040
+Cota subestimada(f(n)): (n^0.7)*log(n)
+Cota ajustada(g(n)): (n^1.2)*log(n)
+Cota sobrestimada(h(n)): (n^1.5)*log(n) 
+Cota ajustada teorica(g(n)*): n*log(n)
+
+Para evitar resultados anomalos(en este caso, los dos primeros valores de la cota ajustada eran demasiado altos y dispersos) 
+se ejecuta el codigo dos veces seguidas.
+
+Conclusion: 
+La cota ajustada teorica (n*log(n)) no es lo suficientemente constante a lo largo de n, ya que crece poco a poco, 
+por ese motivo usamos tambien como cota ajustada (n^1.2)*log(n).
+Las funciones de insercion y busqueda tiene practicamente la misma complejidad, siendo esta ultima un poco mas lenta.

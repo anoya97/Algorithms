@@ -1,0 +1,61 @@
+﻿Nombre de la pareja de prácticas: David Valtierra(david.valtierra) y Julián Fernández (julian.fernandez1).
+Grupo de prácticas: 3.3.
+
+El programa fib calcula sucesión de Fibonacci mediante tres algoritmos distintos para varios numeros de entrada.
+Además tambien mide los tiempos de ejecución de los distintas algoritmos, estos tiempos están medidos en microsegundos(µs).
+
+El ordenador que se usó para la medición de tiempos es un portátil con:
+CPU: Intel Core i7-5500U, up to 3.0 GHz
+Memoria Ram: 8GB
+Disco duro: 100GB (es una partición)
+Sistema Operativo: Ubuntu 14.05.5 (64-bit)
+
+
+Fibonacci 1
+		   n           t(n)      t(n)/f(n)      t(n)/g(n)       t(n)/h(n)
+		   2         0.0091*      0.007504       0.003468       0.00227050
+		   4         0.0226*      0.015443       0.003299       0.00141375
+		   8         0.1608*      0.075028       0.003423       0.00062805
+		  16         7.4948*      1.631098       0.003396       0.00011441
+		  32     16833.0000     797.251965       0.003456       0.00000393
+					subestimada      ajustada      sobreestimada
+							Cte = 0.003
+Se observa un resultado anómalo para n=32.
+*:Tiempo promedio de 100000 ejecuciones del algoritmo.
+Cota subestimada(f(n)): 1.1^n
+Cota ajustada(g(n)): ((1+√5)/2)^n
+Cota sobreestimada(h(n)): 2^n
+Conclusión: t(n)=O(((1+√5)/2)^n)
+
+Fibonacci 2
+		n           t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)
+	    1000          4.270*      0.016999       0.004270       0.000618
+	   10000         41.490*      0.026178       0.004149       0.000450
+	  100000        422.870       0.042287       0.004229       0.000367
+	 1000000       4034.000       0.063935       0.004034       0.000292
+	10000000      41200.000       0.103490       0.004120       0.000256
+				    subestimada      ajustada    sobreestimada
+						    Cte= 0.004
+*:Tiempo promedio de 1000 ejecuciones del algoritmo.
+Cota subestimada(f(n)): n^0.8
+Cota ajustada(g(n)): n
+Cota sobreestimada(h(n)): n*log(n)
+Conclusión: t(n)=O(n)
+
+Fibonacci 3
+	       n           t(n)      t(n)/f(n)      t(n)/g(n)      t(n)/h(n)
+	    1000          0.220*      0.083706       0.031848       0.006957
+	   10000          0.309*      0.101817       0.033549       0.003090
+	  100000          0.375*      0.110519       0.032572       0.001186
+	 1000000          0.436*      0.117301       0.031559       0.000436
+	10000000          0.547*      0.136248       0.033937       0.000173
+				     subestimada     ajustada     sobreestimada
+						    Cte = 0.003
+*:Tiempo promedio de 10000 ejecuciones del algoritmo.
+Cota subestimada(f(n)): √log(n)
+Cota ajustada(g(n)): log(n)
+Cota sobreestimada(h(n)): n^0.5
+Conclusión: t(n)=O(log(n))
+
+Como conclusión podemos comprobar que el tercer algoritmo es le más eficiente.
+Respecto al apartado teórico, las cotas se comportan adecuadamente.
